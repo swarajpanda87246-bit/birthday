@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Happy Birthday, Papa</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;800&family=Newsreader:ital,wght@0,400;1,400&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="c" aria-hidden="true"></canvas>
+<div id="balloons" aria-hidden="true"></div>
+
+<nav id="nav">
+  <a href="#home">Home</a><a href="#letter">Letter</a><a href="#memories">Memories</a><a href="#gallery">Gallery</a><a href="#quiz">Quiz</a><a href="#wishes">Wishes</a>
+</nav>
+
+<main>
+
+<!-- HOME -->
+<section class="page home" id="home">
+  <div class="hero">
+    <div class="hero-text">
+      <h1 id="title" aria-label="Happy Birthday Papa"></h1>
+      <p class="sub">Make a wish, then tap the candle.</p>
+      <button class="cake" id="cake" aria-label="Blow out the candle">
+        <svg viewBox="0 0 150 150" aria-hidden="true">
+          <g class="smoke"><path d="M75 40c-6-8 6-12 0-20" fill="none" stroke="#9aa0c0" stroke-width="3" stroke-linecap="round"/></g>
+          <path class="flame" d="M75 18c9 12 10 20 0 28-10-8-9-16 0-28z" fill="#ff7a1a"/>
+          <path class="flame" d="M75 28c4 6 4 10 0 14-4-4-4-8 0-14z" fill="#ffd166"/>
+          <rect x="71" y="44" width="8" height="28" rx="2" fill="#f6efe0"/>
+          <rect x="20" y="72" width="110" height="30" rx="8" fill="#ffb627"/>
+          <rect x="10" y="100" width="130" height="36" rx="8" fill="#e8590c"/>
+          <path d="M20 72q10 14 20 0t20 0 20 0 20 0 20 0" fill="#f6efe0"/>
+        </svg>
+      </button>
+      <div id="wish">May this year be your happiest yet.</div>
+      <div class="row">
+        <button class="btn" id="song">Play the birthday tune</button>
+        <a class="btn alt" href="#letter">Open my letter</a>
+      </div>
+    </div>
+    <!-- YOUR MAIN PHOTO: put a picture of you and Papa at images/hero.jpg -->
+    <figure class="frame" data-file="images/hero.jpg">
+      <img src="images/hero.jpg" alt="Papa and me together">
+    </figure>
+  </div>
+  <div class="marquee" aria-hidden="true"><div class="track"></div></div>
+</section>
+
+<!-- LETTER -->
+<section class="page letter" id="letter">
+  <h2 class="reveal">A few words for you</h2>
+  <p class="reveal">Papa, there are things I don't say often enough. You worked hard so that we could have more than you did, and you never made it feel like a burden.</p>
+  <p class="reveal">Whatever I have learned about patience, honesty and showing up, I learned by watching you. Thank you for every sacrifice that went unannounced.</p>
+  <p class="sign reveal">With all my love, your child</p>
+  <div class="flips" id="flips"></div>
+  <p class="tiny">Tap a card to turn it over.</p>
+</section>
+
+<!-- MEMORIES -->
+<section class="page" id="memories">
+  <h2 class="reveal">Moments I'll always remember</h2>
+  <ul class="years" id="years">
+    <!-- Edit the text, and add photos at images/memory1.jpg, memory2.jpg, memory3.jpg -->
+    <li class="reveal">
+      <b>Childhood</b>
+      <span>Add a favourite memory, like the first time you took me somewhere special.</span>
+      <figure class="shot" data-file="images/memory1.jpg"><img src="images/memory1.jpg" alt="A childhood memory with Papa"></figure>
+    </li>
+    <li class="reveal">
+      <b>Growing up</b>
+      <span>Add a lesson you taught me that I still carry.</span>
+      <figure class="shot" data-file="images/memory2.jpg"><img src="images/memory2.jpg" alt="Growing up with Papa"></figure>
+    </li>
+    <li class="reveal">
+      <b>Today</b>
+      <span>Add something small we do together that I never want to stop.</span>
+      <figure class="shot" data-file="images/memory3.jpg"><img src="images/memory3.jpg" alt="Papa and me today"></figure>
+    </li>
+  </ul>
+</section>
+
+<!-- GALLERY -->
+<section class="page" id="gallery">
+  <h2 class="reveal">Our pictures</h2>
+  <p class="tiny reveal">Tap a photo to see it bigger. Change the captions to anything you like.</p>
+  <div class="polaroids">
+    <button class="pol reveal" data-file="images/gallery1.jpg"><img src="images/gallery1.jpg" alt="Photo 1 of Papa and me"><span>Caption one</span></button>
+    <button class="pol reveal" data-file="images/gallery2.jpg"><img src="images/gallery2.jpg" alt="Photo 2 of Papa and me"><span>Caption two</span></button>
+    <button class="pol reveal" data-file="images/gallery3.jpg"><img src="images/gallery3.jpg" alt="Photo 3 of Papa and me"><span>Caption three</span></button>
+    <button class="pol reveal" data-file="images/gallery4.jpg"><img src="images/gallery4.jpg" alt="Photo 4 of Papa and me"><span>Caption four</span></button>
+    <button class="pol reveal" data-file="images/gallery5.jpg"><img src="images/gallery5.jpg" alt="Photo 5 of Papa and me"><span>Caption five</span></button>
+    <button class="pol reveal" data-file="images/gallery6.jpg"><img src="images/gallery6.jpg" alt="Photo 6 of Papa and me"><span>Caption six</span></button>
+  </div>
+</section>
+
+<!-- QUIZ -->
+<section class="page" id="quiz">
+  <h2 class="reveal">Which Papa are you?</h2>
+  <div id="qbox"></div>
+</section>
+
+<!-- WISHES -->
+<section class="page" id="wishes">
+  <h2 class="reveal">Birthday wishes</h2>
+  <form class="wform" id="wf">
+    <input id="wn" placeholder="Your name" maxlength="30" required aria-label="Your name">
+    <textarea id="wm" rows="3" placeholder="Write a wish for Papa" maxlength="240" required aria-label="Your wish"></textarea>
+    <button class="btn" type="submit">Add my wish</button>
+  </form>
+  <div class="wall" id="wall"></div>
+  <p class="tiny">Wishes you add are saved on this device only.</p>
+</section>
+
+</main>
+
+<div id="lb" role="dialog" aria-label="Photo viewer" hidden><img alt=""><button class="btn" id="lbx">Close</button></div>
+
+<script src="script.js"></script>
+</body>
+</html>
